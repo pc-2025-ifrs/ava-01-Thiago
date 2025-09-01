@@ -1,6 +1,6 @@
 function mmc(...values){
     const val = values.length ? values.flat(Infinity) : this;
-    if(!val.isNaN || val.some((v) => v%1 || isNaN(v))){
+    if(!val.length || val.some((v) => v%1 || isNaN(v))){
         return "Insira apenas numeros validos";
     }
     for(let max = Math.max(...val), i = max; !val.every((v)=>i%v === 0); i+=max );
